@@ -1,8 +1,8 @@
 library(dplyr) #load DPLYR
 mecha_car <- read.csv('MechaCar_mpg.csv',stringsAsFactors = F) #read data in dataset
 head(mecha_car) #preview DS
-lm(vehicle_length ~ vehicle_weight + spoiler_angle + ground_clearance + AWD + mpg,data=mecha_car) #lin regress
-summary(lm(vehicle_length ~ vehicle_weight + spoiler_angle + ground_clearance + AWD + mpg,data=mecha_car))
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=mecha_car) #lin regress
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD ,data=mecha_car))
 
 Susp_coil <- read.csv('Suspension_Coil.csv',stringsAsFactors = F) #read data in dataset
 total_summary <- Susp_coil %>% summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI)) #build total summary DF
